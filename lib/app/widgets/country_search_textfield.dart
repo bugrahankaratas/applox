@@ -15,6 +15,9 @@ class CountrySearchTextfield extends HookConsumerWidget {
         ref.watch(connectionControllerProvider.notifier);
 
     return TextField(
+      onTapOutside: (_) {
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       cursorColor: appColors.blue,
       onChanged: connectionController.filteredCountryList,
       decoration: InputDecoration(
