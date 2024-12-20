@@ -22,6 +22,7 @@ class ConnectedCountryCard extends HookConsumerWidget {
     final country = connectionState.selectedCountry;
 
     final randomLocation = useState<String?>(null);
+
     String? displayRandomLocation() {
       final random = Random();
       final locations = country?.locations ?? [];
@@ -32,7 +33,12 @@ class ConnectedCountryCard extends HookConsumerWidget {
       return randomLocation;
     }
 
-    randomLocation.value ??= displayRandomLocation();
+    useEffect(() {
+      if (country != null) {
+        randomLocation.value = displayRandomLocation();
+      }
+      return null;
+    }, [country]);
 
     final stealthPercent = useState<int?>(null);
     stealthPercent.value ??= Random().nextInt(100) + 1;
@@ -64,7 +70,7 @@ class ConnectedCountryCard extends HookConsumerWidget {
                   children: [
                     LabelSmallText("Stealth"),
                     TitleSmallText(
-                      "${stealthPercent.value}%", // Stealth yüzdesi sabit
+                      "${stealthPercent.value}%",
                       fontWeight: FontWeight.w700,
                     ),
                   ],
