@@ -1,0 +1,69 @@
+name: testcase
+description: "A new Flutter project."
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  #route
+  auto_route: ^7.8.3
+
+  #state management
+  riverpod: ^2.4.0
+  hooks_riverpod: ^2.4.0
+  flutter_hooks: ^0.20.1
+
+  #ui
+  country_flags: ^3.1.0
+  flutter_svg: ^2.0.10+1
+
+
+
+  #helpers
+  freezed_annotation: ^2.4.1
+  json_serializable: ^6.7.1
+
+
+  #storage
+  shared_preferences: ^2.3.4
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.6
+  auto_route_generator: ^7.3.1
+  freezed: ^2.4.2
+
+
+
+
+flutter:
+  uses-material-design: true
+
+  fonts:
+    - family: Gilroy
+      fonts:
+        - asset: assets/fonts/Gilroy-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Gilroy-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Gilroy-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Gilroy-Bold.ttf
+          weight: 700
+
+  assets:
+    - assets/svgs/
+    - assets/fonts/
